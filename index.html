@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Drink: Online store of coffee drinks</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="./img/favicon/32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./img/favicon/180.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="preload" href="./fonts/montserratregular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/montserratmedium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/montserratbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/montserratsemibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="page__body">
+    <header class="page__header page-header">
+      <nav class="page-header__nav page-header__nav--opened page-header__nav--nojs">
+        <div class="page-header__wrapper">
+          <div class="page-header__bar bar">
+            <a class="page-header__logo logo">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="./img/logo-desktop.svg" width="170" height="36">
+                <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg"  width="82" height="36">
+                <img class="logo__image" src="./img/logo-mobile.svg" width="32" height="36" alt="Логотип">
+              </picture>
+            </a>
+            <p class="bar__title">
+              Online store
+              coffee drinks
+            </p>
+          </div>
+          <ul class="page-header__menu menu">
+            <li class="menu__item">
+              <a class="menu__link menu__link--active" href="#">Home</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Catalog</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Delivery</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+          </ul>
+          <ul class="page-header__user user">
+            <li class="user__item">
+              <svg width="16" height="16">
+                <use xlink:href="./img/icons/stack.svg#user"></use>
+              </svg>
+              <a class="user__link" href="">Sign in</a>
+            </li>
+            <li class="user__item">
+              <svg width="16" height="16">
+                <use xlink:href="./img/icons/stack.svg#bag"></use>
+              </svg>
+              <a class="user__link" href="">Buy</a>
+            </li>
+            <li class="user__item">
+              <button class="page-header__toggler" type="button">
+                <span class="visually-hidden">Open menu</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="page__main page-main">
+      <h1 class="visually-hidden">Online store of coffee drinks</h1>
+      <header class="page-main__header ">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide promo">
+              <div class="promo__container">
+                <div class="promo__image image">
+                  <picture>
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="./img/promo/promo-image-desktop-1.webp 1x, ./img/promo/promo-image-desktop-1@2x.webp 2x">
+                    <source media="(min-width: 768px)" type="image/webp" srcset="./img/promo/promo-image-tablet-1.webp 1x, ./img/promo/promo-image-tablet-1@2x.webp 2x">
+                    <source type="image/webp" srcset="./img/promo/promo-image-mobile-1.webp 1x, ./img/promo/promo-image-mobile-1@2x.webp 2x">
+                    <source media="(min-width: 1200px)" srcset="./img/promo/promo-image-desktop-1.png 1x, ./img/promo/promo-image-desktop-1@2x.png 2x">
+                    <source media="(min-width: 768px)" srcset="./img/promo/promo-image-tablet-1.png 1x, ./img/promo/promo-image-tablet-1@2x.png 2x">
+                    <img class="image__promo" src="./img/promo/promo-image-mobile-1.png" srcset="./img/promo/promo-image-mobile-1@2x.png 2x" width="280" height="270" alt="Coffee jar">
+                  </picture>
+                </div>
+                <div class="promo__text text">
+                  <p class="text__subtitle">New!</p>
+                  <h2 class="text__title">Latte</h2>
+                  <p class="text__description">
+                    Freshly brewed decaffeinated coffee from Ethiopia with natural farm milk - just what you need to relax after a hard day's work
+                  </p>
+                  <div class="promo__price price">
+                    <div>
+                      <span class="price__item price__item--old">2.5$</span>
+                      <span class="price__item price__item--new">2.8$</span>
+                    </div>
+                    <a href="" class="price__button">Order</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide promo">
+              <div class="promo__container">
+                <div class="promo__image image">
+                  <picture>
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="./img/promo/promo-image-desktop-2.webp 1x, ./img/promo/promo-image-desktop-2@2x.webp 2x">
+                    <source media="(min-width: 768px)" type="image/webp" srcset="./img/promo/promo-image-tablet-2.webp 1x, ./img/promo/promo-image-tablet-2@2x.webp 2x">
+                    <source type="image/webp" srcset="./img/promo/promo-image-mobile-2.webp 1x, ./img/promo/promo-image-mobile-2@2x.webp 2x">
+                    <source media="(min-width: 1200px)" srcset="./img/promo/promo-image-desktop-2.png 1x, ./img/promo/promo-image-desktop-2@2x.png 2x">
+                    <source media="(min-width: 768px)" srcset="./img/promo/promo-image-tablet-2.png 1x, ./img/promo/promo-image-tablet-2@2x.png 2x">
+                    <img class="image__promo" src="./img/promo/promo-image-mobile-2.png" srcset="./img/promo/promo-image-mobile-2@2x.png 2x" width="280" height="270" alt="Coffee jar">
+                  </picture>
+                </div>
+                <div class="promo__text text">
+                  <p class="text__subtitle">New!</p>
+                  <h2 class="text__title">Lavender Latte</h2>
+                  <p class="text__description">
+                    An incredible combination of Peruvian highland Arabica coffee with llama milk and lavender syrup will take you right to the top of the Rainbow Mountains
+                  </p>
+                  <div class="promo__price price">
+                    <div>
+                      <span class="price__item price__item--old">2.5$</span>
+                      <span class="price__item price__item--new">2.8$</span>
+                    </div>
+                    <a href="" class="price__button">Order</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide promo">
+              <div class="promo__container">
+                <div class="promo__image image">
+                  <picture>
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="./img/promo/promo-image-desktop-3.webp 1x, ./img/promo/promo-image-desktop-3@2x.webp 2x">
+                    <source media="(min-width: 768px)" type="image/webp" srcset="./img/promo/promo-image-tablet-3.webp 1x, ./img/promo/promo-image-tablet-3@2x.webp 2x">
+                    <source type="image/webp" srcset="./img/promo/promo-image-mobile-3.webp 1x, ./img/promo/promo-image-mobile-3@2x.webp 2x">
+                    <source media="(min-width: 1200px)" srcset="./img/promo/promo-image-desktop-3.png 1x, ./img/promo/promo-image-desktop-3@2x.png 2x">
+                    <source media="(min-width: 768px)" srcset="./img/promo/promo-image-tablet-3.png 1x, ./img/promo/promo-image-tablet-3@2x.png 2x">
+                    <img class="image__promo" src="./img/promo/promo-image-mobile-3.png" srcset="./img/promo/promo-image-mobile-3@2x.png 2x" width="280" height="270" alt="Coffee jar">
+                  </picture>
+                </div>
+                <div class="promo__text text">
+                  <p class="text__subtitle">New!</p>
+                  <h2 class="text__title">Triple Espresso</h2>
+                  <p class="text__description">
+                    Stronger than an adrenaline rush, blacker than the darkest night, this triple espresso from Colombia will show you what true energy is.
+                  </p>
+                  <div class="promo__price price">
+                    <div>
+                      <span class="price__item price__item--old">3.5$</span>
+                      <span class="price__item price__item--new">4.8$</span>
+                    </div>
+                    <a href="" class="price__button">Order</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev" aria-label="flip right."></div>
+          <div class="swiper-button-next" aria-label="flip left."></div>
+        </div>
+      </header>
+      <section class="page-main__section advantage container">
+        <p class="advantage__subtitle">Advantages</p>
+        <h2 class="advantage__title">Top reasons to choose Drink</h2>
+        <ul class="advantage__list">
+          <li class="advantage__item advantage-item">
+            <img class="advantage-item__image" src="./img/advantage-1.svg" alt="Fast" width="50" height="56">
+            <div>
+              <h3 class="advantage-item__title">Speed</h3>
+              <p class="advantage-item__description">
+                Ready drink is always at hand - just open the jar
+              </p>
+            </div>
+          </li>
+          <li class="advantage__item advantage-item">
+            <img class="advantage-item__image" src="./img/advantage-2.svg" alt="Удобно" width="52" height="56">
+            <div>
+              <h3 class="advantage-item__title">Convenience</h3>
+              <p class="advantage-item__description">
+                Easily fits in your pocket or small purse
+              </p>
+            </div>
+          </li>
+          <li class="advantage__item advantage-item">
+            <img class="advantage-item__image" src="./img/advantage-3.svg" alt="cheerfulness" width="42" height="56">
+            <div>
+              <h3 class="advantage-item__title">Cheerfulness</h3>
+              <p class="advantage-item__description">
+                A balanced dose of caffeine will give a powerful boost of energy
+              </p>
+            </div>
+          </li>
+          <li class="advantage__item advantage-item">
+            <img class="advantage-item__image" src="./img/advantage-4.svg" alt="Экологично" width="46" height="56">
+            <div>
+              <h3 class="advantage-item__title">Environmental friendly</h3>
+              <p class="advantage-item__description">
+                All packaging is made from recyclable materials
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="page-main__section catalog">
+        <p class="catalog__subtitle">Catalog</p>
+        <h2 class="catalog__title">Catalog of coffee drinks</h2>
+        <div class="catalog__filter filter container">
+          <form class="filter__form" action="#" method="post">
+            <fieldset class="filter__group field-group">
+              <label class="filter__title">Price</label>
+              <div class="filter__range range">
+                <div class="range__scale">
+                  <div class="range__bar">
+                    <button class="range__toggle range__toggle--min" type="button" aria-label="Change the minimum level.">
+                      <span class="visually-hidden">Change the minimum level.</span>
+                    </button>
+                    <button class="range__toggle range__toggle--max" type="button" aria-label="Change max level.">
+                      <span class="visually-hidden">Change max level.</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="filter__number number">
+                <label>
+                  <input class="number__item" type="number"  name="min" value="0" required>
+                </label>
+                <label>
+                  <input class="number__item" type="number"  name="max" value="900" required>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__group field-group filter__group--buttons">
+              <legend class="field-group__title">Presence of milk</legend>
+              <ul class="field-group__list">
+                <li class="field-group__item">
+                  <label class="control">
+                    <input class="control__input" name="availability" type="radio" value="nomatter" checked="checked" required>
+                    <span class="control__lead">Doesn't matter</span>
+                  </label>
+                </li>
+                <li class="field-group__item">
+                  <label class="control">
+                    <input class="control__input" name="availability" type="radio" value="animals" required>
+                    <span class="control__lead">Animal only</span>
+                  </label>
+                </li>
+                <li class="field-group__item">
+                  <label class="control">
+                    <input class="control__input" name="availability" type="radio" value="plants" required>
+                    <span class="control__lead">Only vegetable</span>
+                  </label>
+                </li>
+                <li class="field-group__item">
+                  <label class="control">
+                    <input class="control__input" name="availability" type="radio" value="plants" disabled>
+                    <span class="control__lead control__lead--last">Without milk</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter__group field-group filter__group--checkbox">
+              <legend class="field-group__title">Country of origin</legend>
+              <ul class="field-group__list">
+                <li class="field-group__item checkbox">
+                  <input class="checkbox__field  visually-hidden" type="checkbox" name="brazil" value="brazil" id="brazil" checked>
+                  <label class="checkbox__description checkbox__description--checkbox" for="brazil">
+                    <span>Brazil</span>
+                  </label>
+                </li>
+                <li class="field-group__item checkbox">
+                  <input class="checkbox__field  visually-hidden" type="checkbox" id="ethiopia" name="ethiopia" value="ethiopia">
+                  <label class="checkbox__description checkbox__description--checkbox" for="ethiopia">
+                    <span>Ethiopia</span>
+                  </label>
+                </li>
+                <li class="field-group__item checkbox">
+                  <input class="checkbox__field  visually-hidden" type="checkbox" id="colombia" name="colombia" value="colombia">
+                  <label class="checkbox__description checkbox__description--checkbox" for="colombia">
+                    <span>Colombia</span>
+                  </label>
+                </li>
+                <li class="field-group__item checkbox">
+                  <input class="checkbox__field  visually-hidden" type="checkbox" id="costa-rica" name="costa-rica" value="costa-rica">
+                  <label class="checkbox__description checkbox__description--checkbox" for="costa-rica">
+                    <span>Costa Rica</span>
+                  </label>
+                </li>
+                <li class="field-group__item checkbox">
+                  <input class="checkbox__field  visually-hidden" type="checkbox" id="peru" name="peru" value="peru" disabled="">
+                  <label class="checkbox__description checkbox__description--checkbox" for="peru">
+                    <span>Peru</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <div class="filter__list">
+              <button class="filter__button filter__button--submit">Apply</button>
+              <button class="filter__button filter__button--reset">Reset</button>
+            </div>
+          </form>
+          <div class="catalog__section">
+            <div class="catalog__sorting sorting">
+              <p class="sorting__item">Sorting:</p>
+              <div class="sorting__wrapper">
+                <select class="sorting__select">
+                  <option class="sorting__value">default</option>
+                  <option class="sorting__value">expensive first</option>
+                  <option class="sorting__value">cheap first</option>
+                  <option class="sorting__value">high rating</option>
+                </select>
+              </div>
+            </div>
+            <ul class="catalog__list">
+              <li class="catalog__item catalog-item">
+                <a href="#">
+                  <picture>
+                    <source type="image/webp" srcset="./img/catalog/coffee-1.webp 1x, ./img/catalog/coffee-1@2x.webp 2x">
+                    <img class="catalog-item__image" src="./img/catalog/coffee-1.jpg" srcset="./img/catalog/coffee-1@2x.jpg 2x" width="130" height="188" alt="Beige can of coffee latte">
+                  </picture>
+                </a>
+                <h3 class="catalog-item__title">
+                  <a href="">Latte</a>
+                </h3>
+                <p class="catalog-item__description">Decaffeinated coffee from Ethiopia with natural farm milk</p>
+                <div class="catalog__price catalog-price">
+                  <span class="catalog-price__item">2.5$</span>
+                  <button class="catalog-price__button">Buy</button>
+                </div>
+              </li>
+              <li class="catalog__item catalog-item">
+                <a href="">
+                  <picture>
+                    <source type="image/webp" srcset="./img/catalog/coffee-2.webp 1x, ./img/catalog/coffee-2@2x.webp 2x">
+                    <img class="catalog-item__image" src="./img/catalog/coffee-2.jpg" srcset="./img/catalog/coffee-2@2x.jpg 2x" width="130" height="188" alt="Purple can of coffee latte">
+                  </picture>
+                </a>
+                <h3 class="catalog-item__title">
+                  <a href="">Latte</a>
+                </h3>
+                <p class="catalog-item__description">Decaffeinated coffee from Ethiopia with natural farm milk</p>
+                <div class="catalog__price catalog-price">
+                  <span class="catalog-price__item">3.5$</span>
+                  <button class="catalog-price__button">Buy</button>
+                </div>
+              </li>
+              <li class="catalog__item catalog-item">
+                <a href="">
+                  <picture>
+                    <source type="image/webp" srcset="./img/catalog/coffee-3.webp 1x, ./img/catalog/coffee-3@2x.webp 2x">
+                    <img class="catalog-item__image" src="./img/catalog/coffee-3.jpg" srcset="./img/catalog/coffee-2@3x.jpg 2x" width="130" height="188" alt="Black can of coffee latte">
+                  </picture>
+                </a>
+                <h3 class="catalog-item__title">
+                  <a href="">Latte</a>
+                </h3>
+                <p class="catalog-item__description">Decaffeinated coffee from Ethiopia with natural farm milk</p>
+                <div class="catalog__price catalog-price">
+                  <span class="catalog-price__item">3.8$</span>
+                  <button class="catalog-price__button">Buy</button>
+                </div>
+              </li>
+              <li class="catalog__item catalog-item">
+                <a href="">
+                  <picture>
+                    <source type="image/webp" srcset="./img/catalog/coffee-4.webp 1x, ./img/catalog/coffee-4@2x.webp 2x">
+                    <img class="catalog-item__image" src="./img/catalog/coffee-4.jpg" srcset="./img/catalog/coffee-4@2x.jpg 2x" width="130" height="188" alt="Pink can of coffee latte">
+                  </picture>
+                </a>
+                <h3 class="catalog-item__title">
+                  <a href="">Latte</a>
+                </h3>
+                <p class="catalog-item__description">Decaffeinated coffee from Ethiopia with natural farm milk</p>
+                <div class="catalog__price catalog-price">
+                  <span class="catalog-price__item">3.8$</span>
+                  <button class="catalog-price__button">Buy</button>
+                </div>
+              </li>
+              <li class="catalog__item catalog-item">
+                <a href="">
+                  <picture>
+                    <source type="image/webp" srcset="./img/catalog/coffee-5.webp 1x, ./img/catalog/coffee-5@2x.webp 2x">
+                    <img class="catalog-item__image" src="./img/catalog/coffee-5.jpg" srcset="./img/catalog/coffee-5@2x.jpg 2x" width="130" height="188" alt="Brown can of coffee latte">
+                  </picture>
+                </a>
+                <h3 class="catalog-item__title">
+                  <a href="">Latte</a>
+                </h3>
+                <p class="catalog-item__description">Decaffeinated coffee from Ethiopia with natural farm milk</p>
+                <div class="catalog__price catalog-price">
+                  <span class="catalog-price__item">3.8$</span>
+                  <button class="catalog-price__button">Buy</button>
+                </div>
+              </li>
+              <li class="catalog__item catalog-item">
+                <a href="">
+                  <picture>
+                    <source type="image/webp" srcset="./img/catalog/coffee-6.webp 1x, ./img/catalog/coffee-6@2x.webp 2x">
+                    <img class="catalog-item__image" src="./img/catalog/coffee-6.jpg" srcset="./img/catalog/coffee-6@2x.jpg 2x" width="130" height="188" alt="Yellow can of coffee latte">
+                  </picture>
+                </a>
+                <h3 class="catalog-item__title">
+                  <a href="">Latte</a>
+                </h3>
+                <p class="catalog-item__description">Decaffeinated coffee from Ethiopia with natural farm milk</p>
+                <div class="catalog__price catalog-price">
+                  <span class="catalog-price__item">3.8$</span>
+                  <button class="catalog-price__button">Buy</button>
+                </div>
+              </li>
+            </ul>
+            <div class="pagination">
+              <button class="pagination__button  pagination__button--back" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.80847 -5.20835e-08L6 1.23899L2.38306 5L6 8.76101L4.80847 10L-2.18557e-07 5L4.80847 -5.20835e-08Z" fill="#7859CF"/>
+                </svg>
+                <span class="pagination__text catalog__button-pagination-desc">Back</span>
+              </button>
+              <ul class="pagination__list">
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">1</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link pagination__link--active">2</a>
+                </li>
+                <li class="pagination__item">
+                  <a class="pagination__link" href="#">3</a>
+                </li>
+              </ul>
+              <button class="pagination__button pagination__button--next" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.19153 -5.20835e-08L5.41581e-08 1.23899L3.61694 5L3.82956e-07 8.76101L1.19153 10L6 5L1.19153 -5.20835e-08Z" fill="#7859CF"/>
+                </svg>
+                <span class="pagination__text catalog__button-pagination-desc">Forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="page__footer page-footer">
+      <div id="map"></div>
+      <div class="page-footer__container container">
+        <div class="page-footer__socials socials">
+          <picture>
+            <source media="(min-width: 768px)" srcset="./img/logo-desktop.svg" width="170" height="36">
+            <img class="socials__logo" src="./img/logo-tablet.svg" width="82" height="36" alt="Логотип">
+          </picture>
+          <p class="socials__description">Online store of coffee drinks</p>
+        </div>
+        <div class="page-footer__menu footer-menu">
+          <div class="page-footer__shop">
+            <h4 class="footer-menu__title">
+              <a href="#">Online store</a>
+            </h4>
+            <ul class="footer-menu__list">
+              <li class="footer-menu__item">
+                <a href="#">Catalog</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="#">Delivery</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="#">Payment Methods</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="#">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-footer__media">
+            <h4 class="footer-menu__title">
+              <a href="#">Media</a>
+            </h4>
+            <ul class="footer-menu__list">
+              <li class="footer-menu__item">
+                <a href="#">Blog</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="#">Information for the media</a>
+              </li>
+              <li class="footer-menu__item">
+                <a href="#">Legal information</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-footer__contacts">
+            <h4 class="footer-menu__title">
+              <a href="#">Contacts</a>
+            </h4>
+            <ul class="footer-menu__list">
+              <li class="footer-menu__item footer-menu__item--address">
+                <a href="">New York,Dunkin</a>
+              </li>
+              <li class="footer-menu__item footer-menu__item--tel">
+                <a class="footer-menu__tel" href="tel:123456789">+1 (234) 567-890-101</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>
